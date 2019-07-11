@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>产品</title>
+    <link rel="stylesheet" href="./css/chanpin.css">
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="css/slicebox.css" />
+    <link rel="stylesheet" type="text/css" href="css/custom.css" />
+    <script type="text/javascript" src="js/modernizr.custom.46884.js"></script>
+
+
+</head>
+
+<body>
+    <div id="nav">
+        <ul>
+            <li><a href="./index.html">首页</a></li>
+            <li><a href="./chanpin.html">产品</a></li>
+            <li><a href="./zhichi.html">支持</a></li>
+            <li><a href="./youxihuamian.html">游戏</a></li>
+            <li><a href="#footer">关于我们</a></li>
+        </ul>
+    </div>
+    <div id="main">
+       
+        <div class="container">
+            <h1>RTX系列产品 <span>Ultimate Game Experience</span></h1>
+        
+            
+
+        
+            <div class="wrapper">
+        
+                <ul id="sb-slider" class="sb-slider">
+                    <li>
+                        <a href=" " target="_blank"><img src="images/1-1.jpg" alt="image1" /></a>
+                        <div class="sb-description">
+                            <h3>RTX2060</h3>
+                        </div>
+                    </li>
+                    <li>
+                        <a href=" " target="_blank"><img src="images/2-1.jpg" alt="image2" /></a>
+                        <div class="sb-description">
+                            <h3>RTX2070</h3>
+                        </div>
+                    </li>
+                    <li>
+                        <a href=" " target="_blank"><img src="images/3-1.jpg" alt="image1" /></a>
+                        <div class="sb-description">
+                            <h3>RTX2080</h3>
+                        </div>
+                    </li>
+                    <li>
+                        <a href=" " target="_blank"><img src="images/4-1.png" alt="image1" /></a>
+                        <div class="sb-description">
+                            <h3>RTX2060 Super</h3>
+                        </div>
+                    </li>
+                    <li>
+                        <a href=" " target="_blank"><img src="images/6-1.png" alt="image1" /></a>
+                        <div class="sb-description">
+                            <h3>RTX2070 Super</h3>
+                        </div>
+                    </li>
+                    <li>
+                        <a href=" " target="_blank"><img src="images/7-1.png" alt="image1" /></a>
+                        <div class="sb-description">
+                            <h3>RTX2080 Super</h3>
+                        </div>
+                    </li>
+                    <li>
+                        <a href=" " target="_blank"><img src="images/5-1.jpg" alt="image1" /></a>
+                        <div class="sb-description">
+                            <h3>RTX2080ti</h3>
+                        </div>
+                    </li>
+                </ul>
+        
+                <div id="shadow" class="shadow"></div>
+        
+                <div id="nav-arrows" class="nav-arrows">
+                    <a href="#">Next</a>
+                    <a href="#">Previous</a>
+                </div>
+        
+                <div id="nav-dots" class="nav-dots">
+                    <span class="nav-dot-current"></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+        
+            </div><!-- /wrapper -->
+        
+        
+        
+        </div>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jquery.slicebox.js"></script>
+        <script type="text/javascript">
+            $(function () {
+
+                var Page = (function () {
+
+                    var $navArrows = $('#nav-arrows').hide(),
+                        $navDots = $('#nav-dots').hide(),
+                        $nav = $navDots.children('span'),
+                        $shadow = $('#shadow').hide(),
+                        slicebox = $('#sb-slider').slicebox({
+                            onReady: function () {
+
+                                $navArrows.show();
+                                $navDots.show();
+                                $shadow.show();
+
+                            },
+                            onBeforeChange: function (pos) {
+
+                                $nav.removeClass('nav-dot-current');
+                                $nav.eq(pos).addClass('nav-dot-current');
+
+                            }
+                        }),
+
+                        init = function () {
+
+                            initEvents();
+
+                        },
+                        initEvents = function () {
+
+                            // add navigation events
+                            $navArrows.children(':first').on('click', function () {
+
+                                slicebox.next();
+                                return false;
+
+                            });
+
+                            $navArrows.children(':last').on('click', function () {
+
+                                slicebox.previous();
+                                return false;
+
+                            });
+
+                            $nav.each(function (i) {
+
+                                $(this).on('click', function (event) {
+
+                                    var $dot = $(this);
+
+                                    if (!slicebox.isActive()) {
+
+                                        $nav.removeClass('nav-dot-current');
+                                        $dot.addClass('nav-dot-current');
+
+                                    }
+
+                                    slicebox.jump(i + 1);
+                                    return false;
+
+                                });
+
+                            });
+
+                        };
+
+                    return { init: init };
+
+                })();
+
+                Page.init();
+
+            });
+        </script>
+        
+    <div id="block">
+        <h1>全新高性能显卡，给您带来极致游戏享受！</h1>
+
+    </div>
+
+
+        
+
+    </div>
+    <div id="footer">
+        <p>Copyright © 2019 MK-14 Inc. 保留所有权利。本作品仅供学习交流使用，不做商业用途。E-mail Address:790169235@qq.com <a href="#nav">回到顶部</a>
+        </p>
+    </div>
+</body>
+
+</html>

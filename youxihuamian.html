@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>游戏</title>
+    <link rel="stylesheet" href="./css/chanpin.css">
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="css/slicebox.css" />
+    <link rel="stylesheet" type="text/css" href="css/custom.css" />
+    <script type="text/javascript" src="js/modernizr.custom.46884.js"></script>
+
+
+</head>
+
+<body>
+    <div id="nav">
+        <ul>
+            <li><a href="./index.html">首页</a></li>
+            <li><a href="./chanpin.html">产品</a></li>
+            <li><a href="./zhichi.html">支持</a></li>
+            <li><a href="./youxihuamian.html">游戏</a></li>
+            <li><a href="#footer">关于我们</a></li>
+        </ul>
+    </div>
+    <div id="main">
+
+        <div class="container">
+            <h1>RTX. IT’S ON. <span>GeForce RTX™ 平台集实时光线追踪、人工智能和可编程着色技术于一身，致力打造全新的游戏体验方式。</span></h1>
+
+
+
+
+            <div class="wrapper">
+
+                <ul id="sb-slider" class="sb-slider">
+                    <li>
+                        <a href=" " target="_blank"><img src="images/1-9.jpg" alt="image1" /></a>
+                        <div class="sb-description">
+                            <h3>GeForce RTX 带来全新游戏方式，带你真情实景沉浸在《仙剑奇侠传七》的跌宕起伏与爱恨情仇。<br>技术应用：实时光线追踪反射</h3>
+                        </div>
+                    </li>
+                    <li>
+                        <a href=" " target="_blank"><img src="images/2-9.jpg" alt="image2" /></a>
+                        <div class="sb-description">
+                            <h3>在电影级的“反射 (Reflections)”技术演示中，一睹 RTX 驱动的光线追踪技术。<br>技术应用：实时光线追踪反射、阴影、环境光遮蔽和 NVIDIA DLSS。</h3>
+                        </div>
+                    </li>
+                    <li>
+                        <a href=" " target="_blank"><img src="images/3-9.jpg" alt="image1" /></a>
+                        <div class="sb-description">
+                            <h3>借助 GeForce RTX 畅玩"控制 (Control)"，尽情探索神秘莫测的"古屋 (Oldest House)"中暗藏的其它维度。<br>技术应用：实时光线追踪反射（包括半透明反射）接触阴影和漫反射全局照明技术。</h3>
+                        </div>
+                    </li>
+                    <li>
+                        <a href=" " target="_blank"><img src="images/4-9.jpg" alt="image1" /></a>
+                        <div class="sb-description">
+                            <h3>快快使用超凡绝尘的 GeForce RTX，体验“古墓丽影：暗影 (Tomb Raider)”中劳拉·克劳馥的制胜时刻。<br>技术应用：实时光线追踪阴影</h3>
+                        </div>
+                    </li>
+                    <li>
+                        <a href=" " target="_blank"><img src="images/6-9.jpg" alt="image1" /></a>
+                        <div class="sb-description">
+                            <h3>借助 RTX 的强大威力，即可尽情体验"夜之城"这座未来都市的蓬勃活力。<br>"赛博朋克 2077 (Cyberpunk 2077)"即将迎来实时光线追踪技术！</h3>
+                        </div>
+                    </li>
+                    <li>
+                        <a href=" " target="_blank"><img src="images/7-9.jpg" alt="image1" /></a>
+                        <div class="sb-description">
+                            <h3>GeForce RTX™ 平台集实时光线追踪、人工智能和可编程着色技术于一身，致力打造全新的游戏体验方式。</h3>
+                        </div>
+                    </li>
+                    <li>
+                        <a href=" " target="_blank"><img src="images/5-9.jpg" alt="image1" /></a>
+                        <div class="sb-description">
+                            <h3>使用当今性能强大的 PC 游戏平台 GeForce RTX，尽享“战地™ 5 (Battlefield™ V)”中前所未有的战争体验。<br>技术应用：实时光线追踪反射</h3>
+                        </div>
+                    </li>
+                </ul>
+
+                <div id="shadow" class="shadow"></div>
+
+                <div id="nav-arrows" class="nav-arrows">
+                    <a href="#">Next</a>
+                    <a href="#">Previous</a>
+                </div>
+
+                <div id="nav-dots" class="nav-dots">
+                    <span class="nav-dot-current"></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+            </div><!-- /wrapper -->
+
+
+
+        </div>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jquery.slicebox.js"></script>
+        <script type="text/javascript">
+            $(function () {
+
+                var Page = (function () {
+
+                    var $navArrows = $('#nav-arrows').hide(),
+                        $navDots = $('#nav-dots').hide(),
+                        $nav = $navDots.children('span'),
+                        $shadow = $('#shadow').hide(),
+                        slicebox = $('#sb-slider').slicebox({
+                            onReady: function () {
+
+                                $navArrows.show();
+                                $navDots.show();
+                                $shadow.show();
+
+                            },
+                            onBeforeChange: function (pos) {
+
+                                $nav.removeClass('nav-dot-current');
+                                $nav.eq(pos).addClass('nav-dot-current');
+
+                            }
+                        }),
+
+                        init = function () {
+
+                            initEvents();
+
+                        },
+                        initEvents = function () {
+
+                            // add navigation events
+                            $navArrows.children(':first').on('click', function () {
+
+                                slicebox.next();
+                                return false;
+
+                            });
+
+                            $navArrows.children(':last').on('click', function () {
+
+                                slicebox.previous();
+                                return false;
+
+                            });
+
+                            $nav.each(function (i) {
+
+                                $(this).on('click', function (event) {
+
+                                    var $dot = $(this);
+
+                                    if (!slicebox.isActive()) {
+
+                                        $nav.removeClass('nav-dot-current');
+                                        $dot.addClass('nav-dot-current');
+
+                                    }
+
+                                    slicebox.jump(i + 1);
+                                    return false;
+
+                                });
+
+                            });
+
+                        };
+
+                    return { init: init };
+
+                })();
+
+                Page.init();
+
+            });
+        </script>
+
+        <div id="block">
+            <h1>来吧！感受本世代的顶级游戏画面吧！</h1>
+
+        </div>
+
+
+
+
+    </div>
+    <div id="footer">
+        <p>Copyright © 2019 MK-14 Inc. 保留所有权利。本作品仅供学习交流使用，不做商业用途。E-mail Address:790169235@qq.com <a href="#nav">回到顶部</a>
+        </p>
+    </div>
+</body>
+
+</html>
